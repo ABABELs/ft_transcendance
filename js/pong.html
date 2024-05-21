@@ -1,0 +1,23 @@
+<html>
+ <body>
+ </body>
+<script src="game.js"></script>
+<script src="game.display.js"></script>
+<script>
+(function () {
+  let requestAnimId;
+  
+  let initialisation = function() {
+    game.init();
+    requestAnimId = window.requestAnimationFrame(main); // premier appel de main au rafraîchissement de la page
+  }
+  
+  const main = function() {
+    requestAnimId = window.requestAnimationFrame(main); // rappel de main au prochain rafraîchissement de la page
+  }
+  
+  window.onload = initialisation; 
+  
+})();
+</script> 
+</html>
